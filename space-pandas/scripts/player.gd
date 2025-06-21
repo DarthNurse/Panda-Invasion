@@ -1,5 +1,9 @@
 extends Node2D
 
+@export var max_health := 3
+var current_health := max_health
+
+
 @export var bullet_scene: PackedScene
 
 
@@ -22,3 +26,40 @@ func _process(delta):
 
 	# Prevent player from going offscreen
 	position.x = clamp(position.x, -720,720)
+
+
+func _ready():
+	_update_health_bar()
+
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		current_health -= 1
+		area.queue_free()
+
+		print("Health:", current_health)
+		_update_health_bar()
+
+		if current_health <= 0:
+			print("Player has been vaporized.")
+			queue_free()
+
+
+			
+func _update_health_bar():
+	var bar = get_tree().root.get_node_or_null("Main/UI/ProgressBar")
+	if bar:
+		bar.value = current_health
+	else:
+		print("Health bar not found!")
+
+
+	
+func take_damage():
+	current_health -= 1
+	_update_health_bar()
+	print("Hit by enemy! Health:", current_health)
+	if current_health <= 0:
+		print("Player has been vaporized.")
+		queue_free()

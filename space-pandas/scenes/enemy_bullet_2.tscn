@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://chojnvclxbvlj"]
+
+[ext_resource type="Script" uid="uid://frsb3toweprv" path="res://scenes/enemy_bullet_2.gd" id="1_nc7rt"]
+[ext_resource type="Texture2D" uid="uid://kd87e7fek70x" path="res://assets/zigzag_bolt.png" id="2_nc7rt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qv8o"]
+radius = 5.24662
+height = 15.7399
+
+[node name="EnemyBullet_2" type="Area2D"]
+script = ExtResource("1_nc7rt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.76982
+scale = Vector2(0.00683832, 0.0068086)
+texture = ExtResource("2_nc7rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.328604, 0.38498)
+shape = SubResource("CapsuleShape2D_6qv8o")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

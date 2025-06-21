@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bie35emmi6u8j"]
+
+[ext_resource type="Script" uid="uid://co0jw70vu3t5q" path="res://scenes/enemy_zigzag.gd" id="1_lflx6"]
+[ext_resource type="PackedScene" uid="uid://chojnvclxbvlj" path="res://scenes/enemy_bullet_2.tscn" id="2_6frhw"]
+[ext_resource type="Texture2D" uid="uid://boaxerlakeqxu" path="res://assets/Panda_Fighter_level_2.png" id="2_87we0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+
+[node name="Enemy" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_lflx6")
+bullet_scene = ExtResource("2_6frhw")
+fire_rate = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0705368, 0.0638615)
+texture = ExtResource("2_87we0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.27103, 3.63236)
+shape = SubResource("CircleShape2D_5uy6h")

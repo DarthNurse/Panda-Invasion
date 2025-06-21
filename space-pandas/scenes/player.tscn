@@ -7,8 +7,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
 height = 23.6001
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Area2D" groups=["player"]]
 script = ExtResource("1_g2els")
+max_health = 10
 bullet_scene = ExtResource("2_qhqgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,5 +17,8 @@ scale = Vector2(0.0953381, 0.0946494)
 texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(-3.73652, 3.38981)
+rotation = -3.14159
+scale = Vector2(3.73652, -3.38981)
 shape = SubResource("CapsuleShape2D_qhqgy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
