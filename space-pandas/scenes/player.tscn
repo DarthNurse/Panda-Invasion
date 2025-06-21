@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://exsyfnbukjbc"]
+
+[ext_resource type="Texture2D" uid="uid://cwv7jlqsnd3rq" path="res://assets/Defender_ship_level_1.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://du1es2o50p60b" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://djgogxmnhf2bc" path="res://scenes/bullet.tscn" id="2_qhqgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+height = 23.6001
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_g2els")
+bullet_scene = ExtResource("2_qhqgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0953381, 0.0946494)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-3.73652, 3.38981)
+shape = SubResource("CapsuleShape2D_qhqgy")
