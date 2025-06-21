@@ -16,8 +16,9 @@ func start_firing():
 
 func fire_bullet():
 	var bullet = bullet_scene.instantiate()
-	bullet.position = global_position
-	get_parent().add_child(bullet)
+	get_tree().current_scene.add_child(bullet)
+	bullet.global_position = global_position
+
 
 
 

@@ -7,22 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://bie35emmi6u8j" path="res://scenes/enemy_zigzag.tscn" id="2_tefeu"]
 
 [node name="Main" type="Node2D"]
+position = Vector2(201, -2)
 script = ExtResource("1_jyhfs")
 zigzag_enemy_scene = ExtResource("2_tefeu")
 enemy_scene = ExtResource("2_tbgi4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -500.0
-offset_top = -957.0
-offset_right = 524.0
-offset_bottom = 67.0
+offset_left = -372.0
+offset_top = -298.0
+offset_right = 652.0
+offset_bottom = 726.0
 texture = ExtResource("1_o5qli")
 
 [node name="Player" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(-12, -2)
+position = Vector2(126, 612)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-11, -277)
+position = Vector2(162, 329)
 scale = Vector2(-11.0727, -144.02)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
@@ -34,9 +35,9 @@ autostart = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
-offset_left = -358.0
-offset_top = -584.0
-offset_right = -158.0
-offset_bottom = -557.0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 217.0
+offset_bottom = 44.0
 max_value = 3.0
 value = 3.0

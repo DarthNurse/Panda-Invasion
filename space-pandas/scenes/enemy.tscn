@@ -12,7 +12,7 @@ speed = 50.0
 bullet_scene = ExtResource("2_5uy6h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0705368, 0.0638615)
+scale = Vector2(0.0702957, 0.0694272)
 texture = ExtResource("2_4ra3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
